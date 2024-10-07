@@ -12,6 +12,7 @@ public class Circle {
     }
 
     public double getRadius() {
+        System.out.println("hi");
         return radius;
     }
 
