@@ -19,4 +19,9 @@ public class Cylinder extends Circle {
     public double getVolume() {
         return getArea() * height;
     }
+
+    @Override
+    public String toString() {
+        return "Cylinder{radius=" + getRadius() + ", height=" + height + ", volume=" + getVolume() + "}";
+    }
 }

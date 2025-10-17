@@ -1,7 +1,6 @@
 package com.workintech.developers;
 
 public class HRManager extends Employee {
-
     private JuniorDeveloper[] juniorDevelopers;
     private MidDeveloper[] midDevelopers;
     private SeniorDeveloper[] seniorDevelopers;
@@ -19,7 +18,7 @@ public class HRManager extends Employee {
         setSalary(getSalary() + 2500);
     }
 
-    // Overloaded addEmployee methods
+    // ---------------- Overloaded addEmployee methods ----------------
     public void addEmployee(JuniorDeveloper dev, int index) {
         if (index < 0 || index >= juniorDevelopers.length) {
             System.out.println("Invalid index for junior developer!");
@@ -58,4 +57,37 @@ public class HRManager extends Employee {
         seniorDevelopers[index] = dev;
         System.out.println("Senior developer " + dev.getName() + " added to index " + index);
     }
+
+    // Tek parametreli versiyonlar – test uyumluluğu için
+    public void addEmployee(JuniorDeveloper dev) {
+        addEmployee(dev, 0);
+    }
+
+    public void addEmployee(MidDeveloper dev) {
+        addEmployee(dev, 0);
+    }
+
+    public void addEmployee(SeniorDeveloper dev) {
+        addEmployee(dev, 0);
+    }
+
+    @Override
+    public String toString() {
+        return "HRManager{name='" + getName() + "', salary=" + getSalary() + "}";
+    }
+
+public Employee[] getEmployees() {
+    Employee[] all = new Employee[juniorDevelopers.length + midDevelopers.length + seniorDevelopers.length];
+    int index = 0;
+    for (Employee e : juniorDevelopers) {
+        all[index++] = e;
+    }
+    for (Employee e : midDevelopers) {
+        all[index++] = e;
+    }
+    for (Employee e : seniorDevelopers) {
+        all[index++] = e;
+    }
+    return all;
+}
 }
