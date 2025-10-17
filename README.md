@@ -22,7 +22,7 @@ Proje sayımız ilerledikçe proje yönetimimizi kolaylaştırmak adına projele
 
 ### Havuzun Alanını Hesaplama
 
-  Workintech yüzme ekibinin sana ihtiyacı var.  
+  Workintech yüzme bikini sana ihtiyacı var.  
 
 * com.workintech.pool paketi altında Rectangle isimli bir sınıf yazınız. Sınıf'ın iki tane sınıf değişkeni olmalı. ```width``` ve ```length``` İki değişkeninde tipini ne seçmeliyiz?
 * width değişkeni de height değişkenide 0 dan küçük set edilirse direkt olarak 0'a set edilmeliler.
