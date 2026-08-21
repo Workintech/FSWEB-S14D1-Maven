@@ -54,7 +54,7 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
         long success = summary.get(TestResultStatus.SUCCESSFUL) != null ? summary.get(TestResultStatus.SUCCESSFUL) : 0;
         long failure = summary.get(TestResultStatus.FAILED) != null ? summary.get(TestResultStatus.FAILED) : 0;
 
-        double score = (double) success / (success + failure);
+        long score = success / (success + failure);
         String userId = "999999";
 
         JSONObject json = new JSONObject();
@@ -67,7 +67,7 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
     private void sendTestResult(String result) throws IOException {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
         try {
-            HttpPost request = new HttpPost("https://backend.api.workintech.com.tr/nextgen/taskLog/saveJavaTasks");
+            HttpPost request = new HttpPost("https://coursey-gpt-backend.herokuapp.com/nextgen/taskLog/saveJavaTasks");
             StringEntity params = new StringEntity(result);
             request.addHeader("content-type", "application/json");
             request.setEntity(params);
